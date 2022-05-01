@@ -18,25 +18,33 @@ $(document).ready(function() {
 
     $("#form").on("submit", function(e) {
         e.preventDefault();
+        var action = 'login';
         var username = $("#username").val();
         var password = $("#password").val();
+        var role = ($("#role").is(':checked')) ? true : false;
+
+        action = role ? 'adminLogin' : action;
 
         var data = {
-            "action": "login",
+            "action": action,
             "username": username,
             "password": password
+
         };
+
+
         $.ajax({
             method: "POST",
-            url: "../api/login.php",
+            url: '../api/login.php',
             data: data,
             dataType: "JSON",
             async: true,
             success: function(data) {
                 var status = data.status;
-                var message = data.message;
+                var message = data.message[0];
 
                 if (status == true) {
+                    sessionStorage.setItem('username', message['username']);
 
                     window.location = 'dashboard1.php'
                 } else {

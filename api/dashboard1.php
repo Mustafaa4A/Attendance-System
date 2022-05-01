@@ -8,7 +8,7 @@ $action = $_POST['action'];
 function read($conn)
 {
     extract($_POST);
-    $LecturerID = $_SESSION['lecID'];
+    $LecturerID = $_SESSION['username'];
     $query = "CALL leccturer_dash_sp('$LecturerID')";
     $result = $conn->query($query);
 

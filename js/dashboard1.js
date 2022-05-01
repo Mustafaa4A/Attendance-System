@@ -26,13 +26,23 @@ $(document).ready(function() {
                                  <div class="card-body text-center">
                                     <h3 class="card-title text-white">${message[i]['className']}</h3>
                                     <div>
-                                     <h6 class="card-subtitle text-white">${message[i]['courseName']}</h6>
-                                    </div>
+                                     <h5 class="card-subtitle text-white">${message[i]['courseName']}</h5>
+                                
+                        `;
+
+                        if (sessionStorage.getItem('username') === 'admin') {
+                            dash += `<h6 class="text-white badge bg-warning p-2 m-2" >${message[i]['lecName']}</h6>`;
+                        }
+
+                        dash += `       </div>
                                 </div>
                             </div>
-                        </button>
-                        `;
+                        </button>`;
+
                     });
+
+
+
 
                     $('#dash').html(dash);
                 } else {
@@ -46,7 +56,6 @@ $(document).ready(function() {
 
     //click button
     $('#dash').on('click', '.btn', function() {
-        sessionStorage.clear();
 
         sessionStorage.setItem("classID", $(this).attr('classID'));
         sessionStorage.setItem("courseID", $(this).attr('courseID'));

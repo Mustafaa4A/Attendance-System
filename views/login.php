@@ -58,6 +58,10 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
                                     </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" placeholder="role" id="role" name="password">
+                                        <label for="role">Login As Admin</label>
+                                    </div>
                                     <button type="submit" class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>
                                 <p class="mt-5 login-form__footer">Dont have account? <a href="page-register.html" class="text-primary">Sign Up</a> now</p>
