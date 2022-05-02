@@ -16,6 +16,7 @@ $(document).ready(function() {
     $('#date').change(function(e) {
         e.preventDefault();
         date = $('#date').val();
+        $("input[name='check_all']").prop("checked", false);
         loadStudents(classID, courseID, date);
     });
 
