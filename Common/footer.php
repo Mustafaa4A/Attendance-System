@@ -55,7 +55,8 @@
                             <i class="icon-speedometer menu-icon"></i> <span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="">Home 1</a></li>
+                            <li><a href="class_report.php">Class Report</a></li>
+                            <li><a href="student_report.php">Student Report</a></li>
                         </ul>
                     </li>
      `;

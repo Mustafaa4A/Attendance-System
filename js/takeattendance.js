@@ -264,52 +264,6 @@ $(document).ready(function() {
     }
 
 
-    function getCourse(classID) {
-        var data = {
-            "action": "getCourse"
-        }
-
-
-        $.ajax({
-            method: "POST",
-            url: "../api/takeattendance.php",
-            data: data,
-            dataType: "JSON",
-            async: true,
-
-            success: function(data) {
-                var status = data.status;
-                var message = data.message;
-                var options = '';
-                // var cols = '';
-                // var rows = '';
-
-                if (status) {
-                    options = '';
-                    message.forEach(function(item, i) {
-                        $("#semID").html("");
-                        // for(index in item){
-                        options += `<option value ="` + item['courseID'] + `">` + item['courseID'] + `  </option>`;
-                        // }
-
-                    });
-                    console.log(options);
-                    $("#course").html(options);
-
-                } else {
-                    console.log(message);
-                }
-            },
-            error: function(data) {
-
-            }
-
-
-
-        });
-
-    }
-
 
 
     $("#form").on('submit', function(e) {
